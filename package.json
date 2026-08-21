@@ -1,0 +1,65 @@
+{
+  "name": "universal-web-storage",
+  "version": "0.1.0",
+  "description": "A typed localStorage wrapper that falls back to an in-memory store outside the browser, so the same calls work during SSR.",
+  "keywords": [
+    "localstorage",
+    "storage",
+    "ssr",
+    "universal",
+    "isomorphic",
+    "typescript"
+  ],
+  "license": "MIT",
+  "author": "Salvador Cardona",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SalvadorCardona/universal-web-storage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SalvadorCardona/universal-web-storage/issues"
+  },
+  "homepage": "https://github.com/SalvadorCardona/universal-web-storage#readme",
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "ci": "pnpm run typecheck && pnpm run lint && pnpm run test && pnpm run build",
+    "changeset": "changeset",
+    "release": "pnpm run build && changeset publish",
+    "prepublishOnly": "pnpm run build"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.8",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.1.1",
+    "@typescript-eslint/eslint-plugin": "^8.64.0",
+    "@typescript-eslint/parser": "^8.64.0",
+    "eslint": "^10.7.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.9.5",
+    "tsdown": "^0.15.0",
+    "typescript": "6.0.3",
+    "vitest": "^4.1.10",
+    "jsdom": "^29.1.1"
+  },
+  "packageManager": "pnpm@10.33.2"
+}
