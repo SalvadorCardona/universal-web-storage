@@ -1,4 +1,4 @@
-# universal-web-storage
+# ssr-safe-storage
 
 A typed `localStorage` wrapper that keeps working outside the browser.
 
@@ -8,7 +8,7 @@ without a DOM — the same calls fall through to an in-memory store instead of
 throwing on a missing `localStorage`.
 
 ```ts
-import { getInStorage, setInStorage, removeInStorage } from "universal-web-storage"
+import { getInStorage, setInStorage, removeInStorage } from "ssr-safe-storage"
 
 setInStorage("preferences", { theme: "dark", density: "compact" })
 
@@ -21,7 +21,7 @@ removeInStorage("preferences")
 ## Installation
 
 ```bash
-pnpm add universal-web-storage
+pnpm add ssr-safe-storage
 ```
 
 No dependencies.
